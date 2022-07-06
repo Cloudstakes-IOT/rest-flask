@@ -9,7 +9,7 @@ def hello():
 def post():
 
     print(request.data)
-    return 'data' 
+    return data 
 
 if __name__ == '__main__':
     app.run()
