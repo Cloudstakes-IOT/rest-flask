@@ -7,11 +7,7 @@ def hello():
 
 @app.route('/post', methods = ['POST', 'GET'])
 def post():
-    response = requests.post(
-            url, data=json.dumps(create_row_data),
-            headers={'Content-Type': 'application/json'}
-        )
-        return response.content
+    return jsonify(request.json)
 
 if __name__ == '__main__':
     app.run()
