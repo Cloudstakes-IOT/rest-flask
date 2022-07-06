@@ -7,9 +7,8 @@ def hello():
 
 @app.route('/post', methods = ["POST"])
 def postJsonHandler():
-    content = request.get_json()
-    print (content)
-    return 'JSON posted'
+    print(request.data)
+    return ''
 
 if __name__ == '__main__':
     app.run()
