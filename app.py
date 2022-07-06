@@ -7,8 +7,12 @@ def hello():
 
 @app.route('/post', methods = ['POST', 'GET'])
 def post():
-    print(request.get_json())
-    return json.dumps({'success':True}), 200, {'ContentType':'application/json'}
+    data = json.loads(request.data)
+    text = data.get("text",None)
+    if text is None:
+        return jsonify({"message":"text not found"})
+    else:
+        return jsonify(data)
 
 if __name__ == '__main__':
     app.run()
