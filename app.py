@@ -7,8 +7,10 @@ def hello():
 
 @app.route('/post', methods = ['POST', 'GET'])
 def post():
-    print(request.data)
-    return data=data
+    params = {
+        'thing1': request.values.get('thing1')
+    }
+    return json.dumps(params)
 
 if __name__ == '__main__':
     app.run()
