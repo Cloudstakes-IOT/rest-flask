@@ -3,7 +3,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return "Welcome to our server "
+    return "<h1> Welcome to our Page Cloudstakes<h1>"
 
 if __name__ == '__main__':
     app.run()
