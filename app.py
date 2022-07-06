@@ -5,10 +5,11 @@ app = Flask(__name__)
 def hello():
     return "<h1> Welcome to Cloudstakes<h1>"
 
-@app.route('/esp')
-def index():
-    data = request.body.read()
-    print(data) 
+@app.route('/post', methods = ["POST"])
+def post():
+
+    print(request.data)
+    return ''   
 
 if __name__ == '__main__':
     app.run()
