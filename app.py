@@ -7,8 +7,7 @@ def hello():
 
 @app.route('/post', methods = ['POST', 'GET'])
 def post():
-    data = request.json
-    return jsonify(data)
+    return {'Hello':data()}
 
 if __name__ == '__main__':
     app.run()
