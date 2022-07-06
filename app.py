@@ -7,9 +7,8 @@ def hello():
 
 @app.route('/post', methods = ['POST', 'GET'])
 def post():
-    data1 = request.data
     print(request.data)
-    return data1 
+    return "<h1> request.data </h1>"
 
 if __name__ == '__main__':
     app.run()
